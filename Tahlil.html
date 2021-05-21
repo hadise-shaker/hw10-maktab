@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search " >
+
+<table id="myTable">
+  <tr class="header">
+    <th >Name</th>
+    <th >LastName</th>
+  </tr>
+  <tr>
+    <td>Hadise</td>
+    <td>Shaker</td>
+  </tr>
+  <tr>
+    <td>Sahar</td>
+    <td>Shaker</td>
+  </tr>
+
+</table>
+<!-- 
+      
+    این کد مربوط به فیلتر کردن برای جستجو است که روی طول ردیف داخل انها (ع) را پیدا کرده و به صورت ارایه ذخیره میکند در ادامه با یک شرط میسنجد که اگر چیزی پیدا کرده است ابتدا متن داخل ان را داخل یک متغیر ذخیره میکند در ادامه شرطی میگذارد که ابتدا تمام متن داخل را که پیدا کرده است را به حروف بزرگ تبدیل میکند 
+    و در این شرط اصلی نمایش هر کدام که از این شرط پیروی کرده است را خالی میگذارد که دیفالت نشان داده شود  و اگر ردیف ها از این شرط پیروی نکنند مخفی میکند
+ --> 
+    <script>
+        function myFunction() {
+ var input, filter, table, tr, td, i, txtValue;
+ input = document.getElementById("myInput");
+ filter = input.value.toUpperCase();
+ table = document.getElementById("myTable");
+ tr = table.getElementsByTagName("tr");
+
+ for (i = 0; i < tr.length; i++) {
+ td = tr[i].getElementsByTagName("td")[0];
+ if (td) {
+ txtValue = td.textContent || td.innerText;
+ if (txtValue.toUpperCase().indexOf(filter) > -1) {
+ tr[i].style.display = "";
+ } else {
+ tr[i].style.display = "none";
+ }
+ }
+ }
+ }
+    </script>
+</body>
+</html>
