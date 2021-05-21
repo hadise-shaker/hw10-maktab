@@ -1,0 +1,39 @@
+.modal-container{
+     /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal{
+    background-color: #25333c;
+    margin: auto;
+    box-shadow: 14px -23px #19b087;
+    border-radius: 10px;
+    width: 35%;
+    min-height: 5rem;
+    display: "";
+}
+.close-modal{
+    background-color: #44535a;
+    margin-right: 0;
+    border-style: none;
+    outline: none;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+    float: right;
+    border-radius: 10px;
+}
+.content{
+    color: #8e9da2;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+}

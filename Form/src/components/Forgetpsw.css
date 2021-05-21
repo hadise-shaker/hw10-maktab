@@ -1,0 +1,28 @@
+.faramoshi{
+    width: 100%;
+    background-color: transparent;
+}
+.faramoshi label{
+    color: #8e9da2;
+    padding: 0 5px 0 10px;
+}
+/* .faramoshi input{
+    width: 100%;
+} */
+.forget-btn {
+    /* width: 26%; */
+    text-align: center;
+    color: #8e9da2;
+    background-color: #44535a;
+    outline: none;
+    cursor: pointer;
+    padding: 7px 80px 7px 80px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: Vazir;
+    border-style: none;
+}
+.forget-btn:hover{
+    background-color: #19b087;
+    color: #ffffff;
+}

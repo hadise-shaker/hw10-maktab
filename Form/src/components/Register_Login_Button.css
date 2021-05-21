@@ -1,0 +1,52 @@
+
+.btn{
+    width: 50%;
+    text-align: center;
+    color: #8e9da2;
+    background-color: #44535a;
+    outline: none;
+    cursor: pointer;
+    padding: 1rem 80px 1rem 80px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: Vazir;
+    border-style: none;
+}
+.btn--right{
+    width: 50%;
+    text-align: center;
+    color: #8e9da2;
+    background-color: #44535a;
+    outline: none;
+    cursor: pointer;
+    padding: 1rem 80px 1rem 80px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: Vazir;
+    border-style: none;
+}
+.btn--left{
+    width: 50%;
+    text-align: center;
+    color: #8e9da2;
+    background-color: #44535a;
+    outline: none;
+    cursor: pointer;
+    padding: 1rem 80px 1rem 80px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: Vazir;
+    border-style: none;
+}
+.btn-container{
+display: flex;
+}
+.btn:focus{
+    background-color: #19b087;
+    color: #ffffff;
+    border-style: none;
+}
+.isactive{
+    color: #ffffff;
+    background-color: #19b087;
+}

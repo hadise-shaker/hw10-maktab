@@ -1,0 +1,78 @@
+*{
+    box-sizing: border-box;
+}
+.register-form{
+    background-color: #25333c;
+    max-width: 700px;
+    min-height: 300px;
+    padding: 30px;
+    margin: auto;
+    direction: rtl;
+    font-family: Vazir;
+   
+}
+.title{
+    color: #ffffff;
+    text-align: center;
+}
+input,select{
+    font-size: 18px;
+    text-align: right;
+    background-color: transparent;
+    padding: 10px 30px 10px 0px;
+   /*  padding-bottom: 20px; */
+    margin-bottom: 40px;
+
+    border:#8e9da2 1px solid ;
+    border-radius: 4px;
+    outline: #8e9da2;
+
+
+}
+.lastName{
+    width: 50%;
+    color: #ffffff;
+    font-family: Vazir;
+}
+.name{
+    width: 47%;
+    margin-left: 18px;
+    color: #ffffff;
+    font-family: Vazir;
+}
+input[type="text"]:not(.lastName,.name),select,input[type="password"],input[type="email"]{
+    width: 100%;
+    color: #ffffff;
+    font-family: Vazir;
+}
+/* select{
+    margin-bottom: 100px !important;
+} */
+.register-form input::placeholder,select,option{
+    color:#8e9da2;
+    background-color: transparent;
+    font-family: Vazir;
+}
+.btn-form{
+    color: #ffffff;
+    background-color: #19b087;
+    outline: none;
+    cursor: pointer;
+    padding: 13px 20px 13px 20px;
+    text-align: center;
+    font-size: 24px;
+    font-family: Vazir;
+    border-style: none;
+    width: 100%;
+    margin-top: 50px;
+}
+
+  .Forget-psw{
+    color: #19b087;
+    cursor: pointer;
+}
+.eye{
+    color: #ffffff;
+    margin: 15px 10px 15px 0;
+    position: absolute;
+}
