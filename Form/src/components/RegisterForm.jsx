@@ -4,12 +4,13 @@ import "../Font/vazir/Vazir.css"
 import Register_Login_Button from"./Register_Login_Button"
 import { FaEye,FaEyeSlash } from 'react-icons/fa'
 import Modal from "./Modal"
-const RegisterForm = ({Register}) => {
+const RegisterForm = ({Register,set}) => {
     const [pwd, setPwd] = useState('');
     const [isRevealPwd, setIsRevealPwd] = useState(false);
     const [edu, setEdu] = useState('');
     const [eduP, setEduP] = useState('');
     const [os, setOs] = useState('');
+    const [showAddTask2, setShowAddTask2] = useState(true);
     const [showmodal, setShowmodal] = useState(false)
     const [name, setName] = useState("")
     const [lastname, setLastName] = useState("")
@@ -29,7 +30,16 @@ const RegisterForm = ({Register}) => {
     return (
         <div>
             <form className="register-form" onSubmit={(e)=>e.preventDefault() } name={Register}>
-      
+      <Register_Login_Button
+        classes={`btn--right ${Register=="register"?"isactive":null}`}
+        btn_lable="ثبت نام"
+        action={set}
+      />
+      <Register_Login_Button
+        classes={`btn--left ${Register==="login"?"isactive":null}`}
+        action={set}
+        btn_lable="ورود"
+      />
        <h1 className="title">رایگان ثبت نام کنید</h1>
        <input type="text" placeholder="نام"className="name" onChange={e =>setName(e.target.value)} />
        <input type="text" placeholder=" نام خانوادگی" className="lastName" onChange={e =>setLastName(e.target.value)} />

@@ -5,7 +5,7 @@ import { FaEye,FaEyeSlash } from 'react-icons/fa'
 import Modal from "./Modal"
 import Register_Login_Button from"./Register_Login_Button"
 import Forgetpsw from './Forgetpsw'
-const LoginForm = ({login}) => {
+const LoginForm = ({login,set}) => {
   const [pwd, setPwd] = useState('');
   const [isRevealPwd, setIsRevealPwd] = useState(false);
 /*   const handleClickShowPassword = () => {
@@ -13,6 +13,7 @@ const LoginForm = ({login}) => {
     setValues({ ...values, showPassword: !values.showPassword });
   }; */
 
+  const [showAddTask3, setShowAddTask3] = useState(true);
   const [showfaramoshi, setShowfaramoshi] = useState(false);
 
   const faramoshi =()=>{
@@ -42,7 +43,17 @@ const LoginForm = ({login}) => {
       <div>
 
        
-        <form className="register-form" id="register-form" onSubmit={(e)=>{e.preventDefault()}} name={login} noValidate>
+        <form className="register-form" id="register-form" onSubmit={(e)=>{e.preventDefault()}} name={login}>
+        <Register_Login_Button
+            classes={`btn--right ${login=="register" ? "isactive" : null}`}
+            btn_lable="ثبت نام"
+            action={set}
+          />
+          <Register_Login_Button
+            classes={`btn--left ${login=="login" ? "isactive" : null}`}
+            action={set}
+            btn_lable="ورود"
+          />
             <h1 className="title">خوش آمدید</h1>
             <input type="email" placeholder="پست الکترونیکی"  onChange={e =>setWelcome(e.target.value)} />
             <div> 
