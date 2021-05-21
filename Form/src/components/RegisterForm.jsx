@@ -10,7 +10,6 @@ const RegisterForm = ({Register}) => {
     const [edu, setEdu] = useState('');
     const [eduP, setEduP] = useState('');
     const [os, setOs] = useState('');
-    const [showAddTask2, setShowAddTask2] = useState(true);
     const [showmodal, setShowmodal] = useState(false)
     const [name, setName] = useState("")
     const [lastname, setLastName] = useState("")
@@ -30,16 +29,7 @@ const RegisterForm = ({Register}) => {
     return (
         <div>
             <form className="register-form" onSubmit={(e)=>e.preventDefault() } name={Register}>
-      <Register_Login_Button
-        classes={`btn--right ${showAddTask2?"isactive":null}`}
-        btn_lable="ثبت نام"
-        action={() => setShowAddTask2(prevstat=>{return prevstat=!prevstat})}
-      />
-      <Register_Login_Button
-        classes={`btn--left ${!showAddTask2?"isactive":null}`}
-        action={() => setShowAddTask2(prevstat=>{return prevstat=!prevstat})}
-        btn_lable="ورود"
-      />
+      
        <h1 className="title">رایگان ثبت نام کنید</h1>
        <input type="text" placeholder="نام"className="name" onChange={e =>setName(e.target.value)} />
        <input type="text" placeholder=" نام خانوادگی" className="lastName" onChange={e =>setLastName(e.target.value)} />

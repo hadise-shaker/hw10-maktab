@@ -13,7 +13,6 @@ const LoginForm = ({login}) => {
     setValues({ ...values, showPassword: !values.showPassword });
   }; */
 
-  const [showAddTask3, setShowAddTask3] = useState(true);
   const [showfaramoshi, setShowfaramoshi] = useState(false);
 
   const faramoshi =()=>{
@@ -43,18 +42,7 @@ const LoginForm = ({login}) => {
       <div>
 
        
-        <form className="register-form" id="register-form" onSubmit={(e)=>{e.preventDefault()}} name={login}>
-                 
-        <Register_Login_Button
-        classes={`btn--right ${!showAddTask3?"isactive":null}`}
-        btn_lable="ثبت نام"
-        action={() => setShowAddTask3(!showAddTask3)}
-      ></Register_Login_Button>
-      <Register_Login_Button
-        classes={`btn--left ${showAddTask3?"isactive":null}`}
-        action={() => setShowAddTask3(!showAddTask3)}
-        btn_lable="ورود"
-      ></Register_Login_Button>
+        <form className="register-form" id="register-form" onSubmit={(e)=>{e.preventDefault()}} name={login} noValidate>
             <h1 className="title">خوش آمدید</h1>
             <input type="email" placeholder="پست الکترونیکی"  onChange={e =>setWelcome(e.target.value)} />
             <div> 

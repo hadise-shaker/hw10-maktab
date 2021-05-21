@@ -76,3 +76,7 @@ input[type="text"]:not(.lastName,.name),select,input[type="password"],input[type
     margin: 15px 10px 15px 0;
     position: absolute;
 }
+.mybtn{
+        margin: auto;
+        max-width: 700px;
+}
