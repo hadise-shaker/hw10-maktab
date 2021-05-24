@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import "../Font/vazir/Vazir.css"
 import "./Forms.css"
 import { FaEye,FaEyeSlash } from 'react-icons/fa'
@@ -13,31 +13,41 @@ const LoginForm = ({login,set}) => {
     setValues({ ...values, showPassword: !values.showPassword });
   }; */
 
-  const [showAddTask3, setShowAddTask3] = useState(true);
-  const [showfaramoshi, setShowfaramoshi] = useState(false);
-
-  const faramoshi =()=>{
-    setShowfaramoshi(!showfaramoshi)
+  const [showforget, setShowforget] = useState(false);
+  const emailPattern= /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const forget =()=>{
+    setShowforget(!showforget)
    /*  console.log("hi"); */
   }
-  const [welcome, setWelcome] = useState('');
-  const [showmodal, setShowmodal] = useState(false)
-  const login_message=(e)=> {
-    if (welcome==="") {
-      alert("لطفا ایمیل خود را وارد نمایید")
-      e.preventDefault() 
-    }if (pwd==="") {
-      alert("لطفا رمز خود را وارد نمایید")
-      e.preventDefault() 
-    } 
-     else{ setShowmodal(!showmodal);
-    }
-  }
-  const closeModal =(e)=>{
-    setShowmodal(!showmodal);
-    e.preventDefault()
-  }
 
+  const [email, setEmail] = useState('');
+  const [showmodal, setShowmodal] = useState(false)
+
+
+  
+  const login_message=()=> {
+    const validemail=emailPattern.test(email);
+if(validemail&&pwd!=="") {
+      setShowmodal(!showmodal);
+      
+    }if (!validemail&&email==="") {
+      alert("لطفا ایمیل خود را صحیح وارد کنید")
+    }
+    if (pwd==="") {
+      alert("لطفا رمز خود را وارد نمایید")
+     
+    } 
+    
+    
+  }
+  useEffect(() => {
+  console.log(email);
+  }, [email])
+  const closeModal =()=>{
+    setShowmodal(!showmodal);
+   
+  }
+  
     return (
       
       <div>
@@ -55,7 +65,7 @@ const LoginForm = ({login,set}) => {
             btn_lable="ورود"
           />
             <h1 className="title">خوش آمدید</h1>
-            <input type="email" placeholder="پست الکترونیکی"  onChange={e =>setWelcome(e.target.value)} />
+            <input type="text" placeholder="پست الکترونیکی"  onChange={e =>setEmail(e.target.value)} required/>
             <div> 
               <div>
               {isRevealPwd ? <FaEye className="eye" onClick={() => setIsRevealPwd(prevState => !prevState)}></FaEye> 
@@ -67,18 +77,19 @@ const LoginForm = ({login,set}) => {
           name="pwd"
           placeholder="رمز عبور"
           type={isRevealPwd ? "text" : "password"}
+          onChange={e => setPwd(e.target.value)}
           value={pwd}
-          onChange={e => setPwd(e.target.value)}/>
+           required/>
             </div>
 
-            <a  className="Forget-psw" onClick={faramoshi}> 
+            <a  className="Forget-psw" onClick={forget}> 
            
             فراموش کردید؟</a>
-            {showfaramoshi&&<Forgetpsw></Forgetpsw>}
+            {showforget&&<Forgetpsw></Forgetpsw>}
             <Register_Login_Button classes="btn-form" btn_lable="ورود" action={login_message}></Register_Login_Button>
             
         </form>
-        {showmodal&&<Modal text={welcome} close={closeModal} text_lable="خوش امدید "></Modal>}
+        {showmodal&&<Modal text={email} close={closeModal} text_lable="خوش امدید " name={email}></Modal>}
         </div>
     )
 }

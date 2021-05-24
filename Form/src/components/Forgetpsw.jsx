@@ -15,10 +15,12 @@ const Forms = () => {
     const [showmodal, setShowmodal] = useState(false)
     const [email, setEmail] = useState('');
     const psw_modal = ()=>{
-        if (email!=="") {
+        const emailPattern= /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        const validemail=emailPattern.test(email);
+        if (validemail) {
             setShowmodal(!showmodal)
         }else{
-            alert(" لطفا ایمیل خود را برای ارسال رمز وارد کنید")
+            alert(" لطفا ایمیل خود را برای ارسال رمز صحیح وارد کنید")
         }
         
     }
@@ -29,7 +31,7 @@ const Forms = () => {
     return (
         <div className="faramoshi">
 <div action="" /* onSubmit={(e)=>{e.preventDefault()}} */>
-    <label htmlFor="">
+    <label >
     ایمیل خود را وارد کنید
        
     </label>
