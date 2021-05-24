@@ -3,7 +3,7 @@ import "../Font/vazir/Vazir.css"
 import "./Forms.css"
 import { FaEye,FaEyeSlash } from 'react-icons/fa'
 import Modal from "./Modal"
-import Register_Login_Button from"./Register_Login_Button"
+import RegisterLoginButton from"./RegisterLoginButton"
 import Forgetpsw from './Forgetpsw'
 const LoginForm = ({login,set}) => {
   const [pwd, setPwd] = useState('');
@@ -24,7 +24,7 @@ const LoginForm = ({login,set}) => {
   const [showmodal, setShowmodal] = useState(false)
 
 
-  
+
   const login_message=()=> {
     const validemail=emailPattern.test(email);
 if(validemail&&pwd!=="") {
@@ -54,12 +54,12 @@ if(validemail&&pwd!=="") {
 
        
         <form className="register-form" id="register-form" onSubmit={(e)=>{e.preventDefault()}} name={login}>
-        <Register_Login_Button
+        <RegisterLoginButton
             classes={`btn--right ${login=="register" ? "isactive" : null}`}
             btn_lable="ثبت نام"
             action={set}
           />
-          <Register_Login_Button
+          <RegisterLoginButton
             classes={`btn--left ${login=="login" ? "isactive" : null}`}
             action={set}
             btn_lable="ورود"
@@ -86,7 +86,7 @@ if(validemail&&pwd!=="") {
            
             فراموش کردید؟</a>
             {showforget&&<Forgetpsw></Forgetpsw>}
-            <Register_Login_Button classes="btn-form" btn_lable="ورود" action={login_message}></Register_Login_Button>
+            <RegisterLoginButton classes="btn-form" btn_lable="ورود" action={login_message}></RegisterLoginButton>
             
         </form>
         {showmodal&&<Modal text={email} close={closeModal} text_lable="خوش امدید " name={email}></Modal>}

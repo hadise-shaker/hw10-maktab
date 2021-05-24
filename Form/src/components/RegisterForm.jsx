@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import "./Forms.css"
 import "../Font/vazir/Vazir.css"
-import Register_Login_Button from"./Register_Login_Button"
+import RegisterLoginButton from"./RegisterLoginButton"
 import { FaEye,FaEyeSlash } from 'react-icons/fa'
 import Modal from "./Modal"
 const RegisterForm = ({Register,set}) => {
@@ -31,12 +31,12 @@ const RegisterForm = ({Register,set}) => {
     return (
         <div>
             <form className="register-form" onSubmit={(e)=>e.preventDefault() } name={Register}>
-      <Register_Login_Button
+      <RegisterLoginButton
         classes={`btn--right ${Register=="register"?"isactive":null}`}
         btn_lable="ثبت نام"
         action={set}
       />
-      <Register_Login_Button
+      <RegisterLoginButton
         classes={`btn--left ${Register==="login"?"isactive":null}`}
         action={set}
         btn_lable="ورود"
@@ -120,7 +120,7 @@ const RegisterForm = ({Register,set}) => {
            <option >18شهر</option>
        </select> : ""}
 
-       <Register_Login_Button classes="btn-form" btn_lable="ثبت نام" action={register}/>
+       <RegisterLoginButton classes="btn-form" btn_lable="ثبت نام" action={register}/>
        {showmodal&&<Modal email={email} name={name} lastname={lastname} os={os} text_os="استان : " text_edu="مدرک : "  text_eduP="محل تحصیل : " edu={edu} eduP={eduP} text_lable="ثبت نام شما انجام شد با ایمیل :" close={closeModal}/>}
    </form>
         </div>

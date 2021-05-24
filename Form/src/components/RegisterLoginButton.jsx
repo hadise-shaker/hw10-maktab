@@ -1,8 +1,8 @@
 import React ,{useState} from 'react'
-import "./Register_Login_Button.css"
+import "./RegisterLoginButton.css"
 import Proptypes from "prop-types";
 
-const Register_Login_Button = ({classes,btn_lable,action}) => {
+const RegisterLoginButton = ({classes,btn_lable,action}) => {
 
     return (
 
@@ -13,8 +13,8 @@ const Register_Login_Button = ({classes,btn_lable,action}) => {
     )
 }
 
-Register_Login_Button.propTypes={
+RegisterLoginButton.propTypes={
 classes: Proptypes.string
 }
 
-export default Register_Login_Button;
+export default RegisterLoginButton;
